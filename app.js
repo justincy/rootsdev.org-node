@@ -34,7 +34,12 @@ app.get('*', function(req, res){
         var $ = window.jQuery;
 
         // Return the wiki article's body        
-        res.render('template', {wikiBody: $('#wiki-body').html()} );
+        res.render('template', {
+          wikiBody: $('#wiki-body').html(),
+          wikiTitle: $('#head .instapaper_title').html(),
+          lastUpdated: $('#last-edit time').html(),
+          githubLink: wikiRoot + path
+        });
 
       });
       

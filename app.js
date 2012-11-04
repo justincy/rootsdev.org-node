@@ -42,4 +42,5 @@ app.get('*', function(req, res){
 });
 
 // Bind app to port 80
-app.listen(80);
+var port = process.env.PORT || 1000;
+app.listen(port);

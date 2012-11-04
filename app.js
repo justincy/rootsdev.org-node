@@ -17,7 +17,7 @@ app.get('*', function(req, res){
   }
 
   // Fetch associated github wiki article
-  request(path, function( error, response, body){
+  request({ uri: path}, function( error, response, body){
   
     if( error && response.statusCode !== 200 ) {
       res.send(404);
